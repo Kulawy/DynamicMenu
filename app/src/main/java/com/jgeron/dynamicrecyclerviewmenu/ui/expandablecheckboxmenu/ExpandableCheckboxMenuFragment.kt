@@ -1,22 +1,22 @@
-package com.jgeron.dynamicrecyclerviewmenu.ui.expandablemenunavi
+package com.jgeron.dynamicrecyclerviewmenu.ui.expandablecheckboxmenu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.jgeron.dynamicrecyclerviewmenu.databinding.FragmentExpandableNaviMenuSampleBinding
+import com.jgeron.dynamicrecyclerviewmenu.databinding.FragmentExpandableCheckboxMenuBinding
 
-class ExpandableNaviMenuSampleFragment : Fragment() {
+class ExpandableCheckboxMenuFragment : Fragment() {
 
-    private var _binding: FragmentExpandableNaviMenuSampleBinding? = null
+    private var _binding: FragmentExpandableCheckboxMenuBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentExpandableNaviMenuSampleBinding.inflate(inflater, container, false)
+        _binding = FragmentExpandableCheckboxMenuBinding.inflate(inflater, container, false)
         return binding.root
     }
 

@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/none">
 
+    <fragment
+        android:id="@+id/check"
+        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandablecheckboxmenu.ExpandableCheckboxMenuFragment"
+        android:label="fragment_expandable_checkbox_menu"
+        tools:layout="@layout/fragment_expandable_checkbox_menu" />
+    <fragment
+        android:id="@+id/none"
+        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandablemenunavi.ExpandableNaviMenuSampleFragment"
+        android:label="fragment_expandable_navi_menu_sample"
+        tools:layout="@layout/fragment_expandable_navi_menu_sample" />
+    <fragment
+        android:id="@+id/radio"
+        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandableradiomenu.ExpandableRadioMenuFragment"
+        android:label="fragment_expandable_radio_menu"
+        tools:layout="@layout/fragment_expandable_radio_menu" />
 </navigation>

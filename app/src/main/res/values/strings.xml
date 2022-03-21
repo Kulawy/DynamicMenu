@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">DynamicMenu</string>
+    <string name="expandable_tap_menu">NONE</string>
+    <string name="expandable_radio_menu">SINGLE</string>
+    <string name="expandable_checkbox_menu">MULTI</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

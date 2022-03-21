@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/none"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_menu_open_48"
+        android:title="@string/expandable_tap_menu"/>
+    <item
+        android:id="@+id/radio"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_radio_button_checked_48"
+        android:title="@string/expandable_radio_menu"/>
+    <item
+        android:id="@+id/check"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_check_box_outline_blank_48"
+        android:title="@string/expandable_checkbox_menu"/>
+</menu>

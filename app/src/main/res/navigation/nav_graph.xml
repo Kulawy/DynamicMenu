@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_expandable_checkbox_menu" />
     <fragment
         android:id="@+id/none"
-        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandablemenunavi.ExpandableNaviMenuSampleFragment"
+        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandableclicablemenu.ExpandableClickableSampleFragment"
         android:label="fragment_expandable_navi_menu_sample"
-        tools:layout="@layout/fragment_expandable_navi_menu_sample" />
+        tools:layout="@layout/fragment_expandable_clickable_sample" />
     <fragment
         android:id="@+id/radio"
         android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandableradiomenu.ExpandableRadioMenuFragment"

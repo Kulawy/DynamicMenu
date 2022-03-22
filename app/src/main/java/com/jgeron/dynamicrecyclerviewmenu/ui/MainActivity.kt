@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.jgeron.dynamicrecyclerviewmenu.R
@@ -28,9 +29,12 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager
                 .findFragmentById(R.id.activity_main_fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
-        setupActionBarWithNavController(navController,
-            AppBarConfiguration(setOf(R.id.none, R.id.radio, R.id.check))
-        )
+//        navController?.let {
+//            NavigationUI.setupActionBarWithNavController()
+//        }
+//        setupActionBarWithNavController(navController,
+//            AppBarConfiguration(setOf(R.id.none, R.id.radio, R.id.check))
+//        )
         binding.activityMainBottomNavMenu.setupWithNavController(navController)
     }
 

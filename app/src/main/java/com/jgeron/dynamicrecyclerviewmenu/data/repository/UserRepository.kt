@@ -9,12 +9,24 @@ import javax.inject.Inject
 class UserRepository @Inject constructor(
     private val dataGenerator: DataGenerator<User>
 ) {
+    private var usersList = emptyList<User>()
 
-    fun getUsers(count: Int): Result<List<User>> =
+    fun populateUsers(count: Int){
+        usersList = dataGenerator.generateElements(count)
+    }
+
+    fun getUsers(): Result<List<User>> =
         try {
-            Result.success(dataGenerator.generateElements(count))
-        }catch (e: IllegalArgumentException){
-            Result.failure(e)
+            Result.success(usersList)
+        } catch (e: Exception) {
+            Result.failure(Exception("SOMETHING WENT WRONG ON FETCHING USERS"))
+        }
+
+    fun getUserById(userId: Int): Result<User?> =
+        try {
+            Result.success(usersList.firstOrNull{it.id == userId})
+        } catch (e: Exception) {
+            Result.failure(Exception("SOMETHING WENT WRONG ON SEARCHING USER"))
         }
 
 }

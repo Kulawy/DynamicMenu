@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">DynamicMenu</string>
-    <string name="expandable_tap_menu">NONE</string>
-    <string name="expandable_radio_menu">SINGLE</string>
-    <string name="expandable_checkbox_menu">MULTI</string>
+    <string name="empty">EMPTY</string>
+    <string name="main_screen">MAIN</string>
 
     <string name="expandable_navi_title">NAVIGATION</string>
 

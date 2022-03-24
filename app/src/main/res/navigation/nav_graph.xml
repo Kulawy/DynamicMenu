@@ -6,18 +6,8 @@
     app:startDestination="@id/none">
 
     <fragment
-        android:id="@+id/check"
-        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandablecheckboxmenu.ExpandableCheckboxMenuFragment"
-        android:label="fragment_expandable_checkbox_menu"
-        tools:layout="@layout/fragment_expandable_checkbox_menu" />
-    <fragment
         android:id="@+id/none"
-        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandableclicablemenu.ExpandableClickableSampleFragment"
+        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.clickablerecyclerlist.ClickableRecyclerListSampleFragment"
         android:label="fragment_expandable_navi_menu_sample"
-        tools:layout="@layout/fragment_expandable_clickable_sample" />
-    <fragment
-        android:id="@+id/radio"
-        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.expandableradiomenu.ExpandableRadioMenuFragment"
-        android:label="fragment_expandable_radio_menu"
-        tools:layout="@layout/fragment_expandable_radio_menu" />
+        tools:layout="@layout/fragment_clickable_recycler_list_sample" />
 </navigation>

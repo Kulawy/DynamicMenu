@@ -24,5 +24,4 @@ class ExpandableRadioMenuFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }

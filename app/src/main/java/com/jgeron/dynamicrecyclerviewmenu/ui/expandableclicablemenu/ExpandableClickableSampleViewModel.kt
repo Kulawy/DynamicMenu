@@ -41,5 +41,4 @@ class ExpandableClickableSampleViewModel @Inject constructor(
             )
         }
     }
-
 }

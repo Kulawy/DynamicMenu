@@ -1,5 +1,7 @@
 package com.jgeron.dynamicrecyclerviewmenu.data.datagenerator
 
+import com.jgeron.dynamicrecyclerviewmenu.domain.model.JobCategory
+import com.jgeron.dynamicrecyclerviewmenu.domain.model.JobCategory.UNKNOWN
 import com.jgeron.dynamicrecyclerviewmenu.domain.model.User
 import io.github.serpro69.kfaker.faker
 import java.lang.IllegalArgumentException
@@ -17,6 +19,17 @@ class UserGenerator @Inject constructor() : DataGenerator<User>{
         }
     }
 
+    private fun getJobPosition() =
+        when(faker.random.nextInt(6)){
+            0 -> JobCategory.ADMINISTRATION
+            1 -> JobCategory.MANAGEMENT
+            2 -> JobCategory.SERVICE
+            3 -> JobCategory.EXTERNAL_WORKER
+            4 -> JobCategory.INTERNAL_WORKER
+            else -> UNKNOWN
+        }
+
+
     @Throws(IllegalArgumentException::class)
     override fun generateElements(count: Int): List<User> {
         if (count <= 0){
@@ -27,6 +40,7 @@ class UserGenerator @Inject constructor() : DataGenerator<User>{
                 val nick = faker.funnyName.name()
                 add(
                     User(
+                        faker.random.nextInt(),
                         faker.name.firstName(),
                         faker.name.lastName(),
                         nick,
@@ -34,7 +48,8 @@ class UserGenerator @Inject constructor() : DataGenerator<User>{
                         faker.address.city(),
                         faker.address.country(),
                         Random().nextBoolean(),
-                        faker.yoda.quotes()
+                        faker.yoda.quotes(),
+                        getJobPosition()
                     )
                 )
             }

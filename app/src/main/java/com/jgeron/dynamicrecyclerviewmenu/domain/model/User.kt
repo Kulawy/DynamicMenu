@@ -1,6 +1,7 @@
 package com.jgeron.dynamicrecyclerviewmenu.domain.model
 
 data class User(
+    val id: Int,
     val firstName: String,
     val lastName: String,
     val nickName: String,
@@ -8,5 +9,6 @@ data class User(
     val city: String,
     val country: String,
     val speaksEnglish: Boolean,
-    val motto: String
+    val motto: String,
+    val position: JobCategory
 )

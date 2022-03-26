@@ -11,5 +11,4 @@ object UserPresentationDiffUtilItemCallback :
 
     override fun areContentsTheSame(oldItem: UserPresentation, newItem: UserPresentation): Boolean =
         oldItem == newItem
-
 }

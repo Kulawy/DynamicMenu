@@ -49,7 +49,6 @@ class ClickableRecyclerListSampleFragment : Fragment() {
     }
 
     private fun initRecyclerView() = with(binding.fragmentclickablerecyclerlistsampleRecyclerview) {
-
         listAdapter = UserRecyclerListAdapter(onUserSelected)
         adapter = listAdapter
         layoutManager = LinearLayoutManager(requireContext())

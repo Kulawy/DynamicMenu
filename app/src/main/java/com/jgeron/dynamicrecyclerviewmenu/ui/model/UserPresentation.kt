@@ -7,19 +7,27 @@ data class UserPresentation(
     val isHighlighted: Boolean = false
 ) {
     companion object {
-        fun List<UserPresentation>.selectItemOnListOfPresentationItems(
+        fun List<UserPresentation>.changeSingleSelectionOnListOfPresentationItems(
             selectedItemId: Int
         ): List<UserPresentation> = this.map {
             it.copy(
-                isHighlighted = it.id == selectedItemId
+                isHighlighted = if (it.id == selectedItemId) !it.isHighlighted else false
             )
         }
 
-        fun List<UserPresentation>.changeSelectionItemOnListOfPresentationItems(
+        fun List<UserPresentation>.changeMultipleSelectionOnListOfPresentationItems(
             selectedItemId: Int
         ): List<UserPresentation> = this.map {
             it.copy(
                 isHighlighted = if (it.id == selectedItemId) !it.isHighlighted else it.isHighlighted
+            )
+        }
+
+        fun List<UserPresentation>.selectListOnListOfPresentationItems(
+            presentationItems: List<Int>
+        ): List<UserPresentation> = this.map {
+            it.copy(
+                isHighlighted = presentationItems.contains(it.id)
             )
         }
     }

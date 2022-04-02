@@ -1,4 +1,4 @@
-package com.jgeron.dynamicrecyclerviewmenu.ui.clickablerecyclerlist
+package com.jgeron.dynamicrecyclerviewmenu.ui.adapters
 
 import androidx.recyclerview.widget.DiffUtil
 import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation

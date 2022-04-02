@@ -4,74 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.clickablerecyclerlist.ClickableRecyclerListSampleFragment">
+    tools:context=".ui.singleselectrecyclerlist.SingleSelectRecyclerListFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/fragmentclickablerecyclerlistsample_first_name"
+            android:id="@+id/fragmentmultipleselectrecyclerlist_first_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
             android:text="@string/empty"
-            app:layout_constraintBottom_toTopOf="@id/fragmentclickablerecyclerlistsample_last_name"
+            app:layout_constraintBottom_toTopOf="@id/fragmentmultipleselectrecyclerlist_last_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/fragmentclickablerecyclerlistsample_last_name"
+            android:id="@+id/fragmentmultipleselectrecyclerlist_last_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
             android:text="@string/empty"
-            app:layout_constraintBottom_toTopOf="@id/fragmentclickablerecyclerlistsample_city"
+            app:layout_constraintBottom_toTopOf="@id/fragmentmultipleselectrecyclerlist_city"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentclickablerecyclerlistsample_first_name"
+            app:layout_constraintTop_toBottomOf="@id/fragmentmultipleselectrecyclerlist_first_name"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/fragmentclickablerecyclerlistsample_city"
+            android:id="@+id/fragmentmultipleselectrecyclerlist_city"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
             android:text="@string/empty"
-            app:layout_constraintBottom_toTopOf="@id/fragmentclickablerecyclerlistsample_country"
+            app:layout_constraintBottom_toTopOf="@id/fragmentmultipleselectrecyclerlist_country"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentclickablerecyclerlistsample_last_name"
+            app:layout_constraintTop_toBottomOf="@id/fragmentmultipleselectrecyclerlist_last_name"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/fragmentclickablerecyclerlistsample_country"
+            android:id="@+id/fragmentmultipleselectrecyclerlist_country"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
             android:text="@string/empty"
-            app:layout_constraintBottom_toTopOf="@id/fragmentclickablerecyclerlistsample_email"
+            app:layout_constraintBottom_toTopOf="@id/fragmentmultipleselectrecyclerlist_email"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentclickablerecyclerlistsample_city"
+            app:layout_constraintTop_toBottomOf="@id/fragmentmultipleselectrecyclerlist_city"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/fragmentclickablerecyclerlistsample_email"
+            android:id="@+id/fragmentmultipleselectrecyclerlist_email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
             android:text="@string/empty"
-            app:layout_constraintBottom_toTopOf="@id/fragmentclickablerecyclerlistsample_motto"
+            app:layout_constraintBottom_toTopOf="@id/fragmentmultipleselectrecyclerlist_motto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentclickablerecyclerlistsample_country"
+            app:layout_constraintTop_toBottomOf="@id/fragmentmultipleselectrecyclerlist_country"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
-            android:id="@+id/fragmentclickablerecyclerlistsample_motto"
+            android:id="@+id/fragmentmultipleselectrecyclerlist_motto"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_medium"
@@ -79,7 +79,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentclickablerecyclerlistsample_email"
+            app:layout_constraintTop_toBottomOf="@id/fragmentmultipleselectrecyclerlist_email"
             app:layout_constraintVertical_chainStyle="packed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -103,7 +103,7 @@
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fragmentclickablerecyclerlistsample_recyclerview"
+            android:id="@+id/fragmentmultipleselectrecyclerlist_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:itemCount="10"

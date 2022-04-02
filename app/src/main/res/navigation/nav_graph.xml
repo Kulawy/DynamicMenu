@@ -3,11 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/none">
+    app:startDestination="@id/single">
 
     <fragment
-        android:id="@+id/none"
-        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.clickablerecyclerlist.ClickableRecyclerListSampleFragment"
-        android:label="fragment_expandable_navi_menu_sample"
-        tools:layout="@layout/fragment_clickable_recycler_list_sample" />
+        android:id="@+id/single"
+        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.singleselectrecyclerlist.SingleSelectRecyclerListFragment"
+        android:label="SingleSelectRecyclerListFragment"
+        tools:layout="@layout/fragment_single_select_recycler_list" />
+    <fragment
+        android:id="@+id/multiple"
+        android:name="com.jgeron.dynamicrecyclerviewmenu.ui.multipleselectrecyclerlist.MultipleSelectRecyclerListFragment"
+        android:label="MultipleSelectRecyclerListFragment"
+        tools:layout="@layout/fragment_multiple_select_recycler_list" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.jgeron.dynamicrecyclerviewmenu.ui.clickablerecyclerlist
+package com.jgeron.dynamicrecyclerviewmenu.ui.viewmodel
 
 import com.jgeron.dynamicrecyclerviewmenu.domain.model.User
 import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation

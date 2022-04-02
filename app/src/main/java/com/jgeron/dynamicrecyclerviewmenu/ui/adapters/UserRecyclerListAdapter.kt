@@ -1,4 +1,4 @@
-package com.jgeron.dynamicrecyclerviewmenu.ui.clickablerecyclerlist
+package com.jgeron.dynamicrecyclerviewmenu.ui.adapters
 
 import android.graphics.Typeface
 import android.view.LayoutInflater

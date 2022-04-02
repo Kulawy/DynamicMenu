@@ -1,17 +1,19 @@
-package com.jgeron.dynamicrecyclerviewmenu.ui.clickablerecyclerlist
+package com.jgeron.dynamicrecyclerviewmenu.ui.multipleselectrecyclerlist
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.jgeron.dynamicrecyclerviewmenu.databinding.FragmentClickableRecyclerListSampleBinding
+import com.jgeron.dynamicrecyclerviewmenu.databinding.FragmentMultipleSelectRecyclerListBinding
 import com.jgeron.dynamicrecyclerviewmenu.domain.model.User
+import com.jgeron.dynamicrecyclerviewmenu.ui.viewmodel.ClickableRecyclerListSampleViewModel
+import com.jgeron.dynamicrecyclerviewmenu.ui.adapters.UserRecyclerListAdapter
 import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
@@ -20,11 +22,11 @@ import kotlinx.coroutines.launch
 
 @WithFragmentBindings
 @AndroidEntryPoint
-class ClickableRecyclerListSampleFragment : Fragment() {
+class MultipleSelectRecyclerListFragment : Fragment() {
 
-    private var _binding: FragmentClickableRecyclerListSampleBinding? = null
-    private val binding get() = _binding!!
     private val viewModel: ClickableRecyclerListSampleViewModel by viewModels()
+    private var _binding: FragmentMultipleSelectRecyclerListBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var listAdapter: UserRecyclerListAdapter
 
@@ -32,7 +34,7 @@ class ClickableRecyclerListSampleFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentClickableRecyclerListSampleBinding.inflate(inflater, container, false)
+        _binding = FragmentMultipleSelectRecyclerListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -43,12 +45,7 @@ class ClickableRecyclerListSampleFragment : Fragment() {
         observeState()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    private fun initRecyclerView() = with(binding.fragmentclickablerecyclerlistsampleRecyclerview) {
+    private fun initRecyclerView() = with(binding.fragmentmultipleselectrecyclerlistRecyclerview) {
         listAdapter = UserRecyclerListAdapter(onUserSelected)
         adapter = listAdapter
         layoutManager = LinearLayoutManager(requireContext())
@@ -58,7 +55,7 @@ class ClickableRecyclerListSampleFragment : Fragment() {
     }
 
     private val onUserSelected: (Int) -> Unit = {
-        viewModel.onUserPresentationClick(it)
+        viewModel.onMultipleSelectUserPresentationClick(it)
     }
 
     private fun observeState() {
@@ -73,12 +70,12 @@ class ClickableRecyclerListSampleFragment : Fragment() {
 
     private fun bindCurrentSelectedUser(currentSelectedUser: User?) = with(binding) {
         currentSelectedUser?.let {
-            fragmentclickablerecyclerlistsampleFirstName.text = it.firstName
-            fragmentclickablerecyclerlistsampleLastName.text = it.lastName
-            fragmentclickablerecyclerlistsampleCity.text = it.city
-            fragmentclickablerecyclerlistsampleCountry.text = it.country
-            fragmentclickablerecyclerlistsampleEmail.text = it.email
-            fragmentclickablerecyclerlistsampleMotto.text = it.motto
+            fragmentmultipleselectrecyclerlistFirstName.text = it.firstName
+            fragmentmultipleselectrecyclerlistLastName.text = it.lastName
+            fragmentmultipleselectrecyclerlistCity.text = it.city
+            fragmentmultipleselectrecyclerlistCountry.text = it.country
+            fragmentmultipleselectrecyclerlistEmail.text = it.email
+            fragmentmultipleselectrecyclerlistMotto.text = it.motto
         }
     }
 

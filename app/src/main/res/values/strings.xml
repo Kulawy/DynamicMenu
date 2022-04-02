@@ -2,9 +2,10 @@
     <string name="app_name">DynamicMenu</string>
     <string name="empty">EMPTY</string>
     <string name="main_screen">MAIN</string>
+    <string name="single">SINGLE</string>
+    <string name="multiple">MULTIPLE</string>
 
     <string name="expandable_navi_title">NAVIGATION</string>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

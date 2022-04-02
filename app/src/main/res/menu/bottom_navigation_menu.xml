@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/none"
+        android:id="@id/single"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_menu_open_48"
-        android:title="@string/main_screen"/>
+        android:icon="@drawable/ic_baseline_radio_button_checked_48"
+        android:title="@string/single"/>
+    <item
+        android:id="@id/multiple"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_check_box_outline_blank_48"
+        android:title="@string/multiple"/>
 </menu>

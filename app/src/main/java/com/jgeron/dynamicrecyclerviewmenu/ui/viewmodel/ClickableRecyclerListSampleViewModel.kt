@@ -1,4 +1,4 @@
-package com.jgeron.dynamicrecyclerviewmenu.ui.clickablerecyclerlist
+package com.jgeron.dynamicrecyclerviewmenu.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -6,8 +6,8 @@ import com.jgeron.dynamicrecyclerviewmenu.common.utils.updateValue
 import com.jgeron.dynamicrecyclerviewmenu.data.repository.UserRepository
 import com.jgeron.dynamicrecyclerviewmenu.di.DefaultDispatcher
 import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation
-import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation.Companion.changeSelectionItemOnListOfPresentationItems
-import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation.Companion.selectItemOnListOfPresentationItems
+import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation.Companion.changeMultipleSelectionOnListOfPresentationItems
+import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation.Companion.changeSingleSelectionOnListOfPresentationItems
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -43,19 +43,36 @@ class ClickableRecyclerListSampleViewModel @Inject constructor(
         }
     }
 
-    fun onUserPresentationClick(userId: Int) {
+    fun onSingleSelectUserPresentationClick(userId: Int) {
         viewModelScope.launch(defaultDispatcher) {
             userRepository.getUserById(userId).fold(
                 { user ->
                     _stateRecyclerList.updateValue {
                         copy(
                             userPresentationsList = _stateRecyclerList.value.userPresentationsList
-                                .changeSelectionItemOnListOfPresentationItems(userId),
+                                .changeSingleSelectionOnListOfPresentationItems(userId),
                             currentSelectedUser = user
                         )
                     }
                 },
-                {_stateRecyclerList.updateValue { copy(error = it) } }
+                { _stateRecyclerList.updateValue { copy(error = it) } }
+            )
+        }
+    }
+
+    fun onMultipleSelectUserPresentationClick(userId: Int) {
+        viewModelScope.launch(defaultDispatcher) {
+            userRepository.getUserById(userId).fold(
+                { user ->
+                    _stateRecyclerList.updateValue {
+                        copy(
+                            userPresentationsList = _stateRecyclerList.value.userPresentationsList
+                                .changeMultipleSelectionOnListOfPresentationItems(userId),
+                            currentSelectedUser = user
+                        )
+                    }
+                },
+                { _stateRecyclerList.updateValue { copy(error = it) } }
             )
         }
     }

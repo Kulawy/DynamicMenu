@@ -12,7 +12,7 @@ import com.jgeron.dynamicrecyclerviewmenu.databinding.UserPresentationItemViewBi
 import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation
 
 class UserRecyclerListAdapter(
-    private val onItemClickCall: (Int) -> Unit
+    private val onItemClick: (Int) -> Unit
 ) : ListAdapter<UserPresentation, ViewHolder>(
     UserPresentationDiffUtilItemCallback
 ) {
@@ -37,13 +37,13 @@ class UserRecyclerListAdapter(
             val bindingItem = getItem(position)
             itemBinding.userPresentationItemFirstName.text = bindingItem.firstName
             itemBinding.userPresentationItemLastName.text = bindingItem.lastName
-            setViewBaseOnUserPresentationState(bindingItem.isHighlighted)
+            updateHighlight(bindingItem.isHighlighted)
             itemBinding.userPresentationItemRoot.setOnClickListener {
-                onItemClickCall(bindingItem.id)
+                onItemClick(bindingItem.id)
             }
         }
 
-        private fun setViewBaseOnUserPresentationState(isHighlighted: Boolean){
+        private fun updateHighlight(isHighlighted: Boolean){
             if ( isHighlighted ){
                 itemBinding.root.setCardBackgroundColor(
                     ContextCompat.getColor(itemView.context, R.color.red)

@@ -14,7 +14,7 @@ import com.jgeron.dynamicrecyclerviewmenu.databinding.FragmentSingleSelectRecycl
 import com.jgeron.dynamicrecyclerviewmenu.domain.model.User
 import com.jgeron.dynamicrecyclerviewmenu.ui.adapters.UserRecyclerListAdapter
 import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation
-import com.jgeron.dynamicrecyclerviewmenu.ui.viewmodel.ClickableRecyclerListSampleViewModel
+import com.jgeron.dynamicrecyclerviewmenu.ui.viewmodel.ClickableRecyclerListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
 import kotlinx.coroutines.flow.collectLatest
@@ -26,7 +26,7 @@ class SingleSelectRecyclerListFragment : Fragment() {
 
     private var _binding: FragmentSingleSelectRecyclerListBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: ClickableRecyclerListSampleViewModel by viewModels()
+    private val viewModel: ClickableRecyclerListViewModel by viewModels()
 
     private lateinit var listAdapter: UserRecyclerListAdapter
 
@@ -50,8 +50,8 @@ class SingleSelectRecyclerListFragment : Fragment() {
         _binding = null
     }
 
-    private fun initRecyclerView() = with(binding.fragmentclickablerecyclerlistsampleRecyclerview) {
-        listAdapter = UserRecyclerListAdapter(onUserSelected)
+    private fun initRecyclerView() = with(binding.clickableListFragmentRecyclerview) {
+        listAdapter = UserRecyclerListAdapter(::onUserSelected)
         adapter = listAdapter
         layoutManager = LinearLayoutManager(requireContext())
         addItemDecoration(
@@ -59,8 +59,8 @@ class SingleSelectRecyclerListFragment : Fragment() {
         )
     }
 
-    private val onUserSelected: (Int) -> Unit = {
-        viewModel.onSingleSelectUserPresentationClick(it)
+    private fun onUserSelected(presentationItemId: Int) {
+        viewModel.onSingleSelectUserPresentationClick(presentationItemId)
     }
 
     private fun observeState() {
@@ -75,12 +75,12 @@ class SingleSelectRecyclerListFragment : Fragment() {
 
     private fun bindCurrentSelectedUser(currentSelectedUser: User?) = with(binding) {
         currentSelectedUser?.let {
-            fragmentclickablerecyclerlistsampleFirstName.text = it.firstName
-            fragmentclickablerecyclerlistsampleLastName.text = it.lastName
-            fragmentclickablerecyclerlistsampleCity.text = it.city
-            fragmentclickablerecyclerlistsampleCountry.text = it.country
-            fragmentclickablerecyclerlistsampleEmail.text = it.email
-            fragmentclickablerecyclerlistsampleMotto.text = it.motto
+            clickableListFragmentFirstName.text = it.firstName
+            clickableListFragmentLastName.text = it.lastName
+            clickableListFragmentCity.text = it.city
+            clickableListFragmentCountry.text = it.country
+            clickableListFragmentEmail.text = it.email
+            clickableListFragmentMotto.text = it.motto
         }
     }
 

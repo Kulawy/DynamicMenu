@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jgeron.dynamicrecyclerviewmenu.databinding.FragmentMultipleSelectRecyclerListBinding
 import com.jgeron.dynamicrecyclerviewmenu.domain.model.User
-import com.jgeron.dynamicrecyclerviewmenu.ui.viewmodel.ClickableRecyclerListSampleViewModel
+import com.jgeron.dynamicrecyclerviewmenu.ui.viewmodel.ClickableRecyclerListViewModel
 import com.jgeron.dynamicrecyclerviewmenu.ui.adapters.UserRecyclerListAdapter
 import com.jgeron.dynamicrecyclerviewmenu.ui.model.UserPresentation
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,7 +24,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class MultipleSelectRecyclerListFragment : Fragment() {
 
-    private val viewModel: ClickableRecyclerListSampleViewModel by viewModels()
+    private val viewModel: ClickableRecyclerListViewModel by viewModels()
     private var _binding: FragmentMultipleSelectRecyclerListBinding? = null
     private val binding get() = _binding!!
 
@@ -46,7 +46,7 @@ class MultipleSelectRecyclerListFragment : Fragment() {
     }
 
     private fun initRecyclerView() = with(binding.fragmentmultipleselectrecyclerlistRecyclerview) {
-        listAdapter = UserRecyclerListAdapter(onUserSelected)
+        listAdapter = UserRecyclerListAdapter(::onUserSelected)
         adapter = listAdapter
         layoutManager = LinearLayoutManager(requireContext())
         addItemDecoration(
@@ -54,8 +54,8 @@ class MultipleSelectRecyclerListFragment : Fragment() {
         )
     }
 
-    private val onUserSelected: (Int) -> Unit = {
-        viewModel.onMultipleSelectUserPresentationClick(it)
+    private fun onUserSelected(presentationItemId: Int){
+        viewModel.onMultipleSelectUserPresentationClick(presentationItemId)
     }
 
     private fun observeState() {

@@ -6,7 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.jgeron.dynamicrecyclerviewmenu.databinding.FragmentExpandableCheckboxMenuBinding
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
 
+@WithFragmentBindings
+@AndroidEntryPoint
 class ExpandableCheckboxMenuFragment : Fragment() {
 
     private var _binding: FragmentExpandableCheckboxMenuBinding? = null

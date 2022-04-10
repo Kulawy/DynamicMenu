@@ -5,10 +5,17 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_menu_open_48.xml" value="0.237" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_clickable_recycler_list_sample.xml" value="0.20488721804511278" />
         <entry key="app/src/main/res/layout/fragment_expandable_checkbox_menu.xml" value="0.28541666666666665" />
+        <entry key="app/src/main/res/layout/fragment_expandable_clickable_sample.xml" value="0.1893162393162393" />
         <entry key="app/src/main/res/layout/fragment_expandable_navi_menu_sample.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_expandable_radio_menu.xml" value="0.23072916666666668" />
+        <entry key="app/src/main/res/layout/fragment_multiple_select_recycler_list.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_sub_navi_menu_sample.xml" value="0.5109375" />
+        <entry key="app/src/main/res/layout/user_presentation_checkbox_item_view.xml" value="0.1893162393162393" />
+        <entry key="app/src/main/res/layout/user_presentation_item_view.xml" value="0.20488721804511278" />
+        <entry key="app/src/main/res/layout/user_presentation_parent_item_view.xml" value="0.1893162393162393" />
+        <entry key="app/src/main/res/layout/user_presentation_radiobutton_item_view.xml" value="0.1893162393162393" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.23072916666666668" />
       </map>
     </option>

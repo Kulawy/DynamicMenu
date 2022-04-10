@@ -6,7 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.jgeron.dynamicrecyclerviewmenu.databinding.FragmentExpandableRadioMenuBinding
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
 
+@WithFragmentBindings
+@AndroidEntryPoint
 class ExpandableRadioMenuFragment : Fragment() {
 
     private var _binding: FragmentExpandableRadioMenuBinding? = null
